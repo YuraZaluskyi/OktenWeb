@@ -73,6 +73,16 @@ public class Department {
         }
     }
 
+    //    find book by title and author
+    public Book findBook(String title, String author) {
+        for (int i = 0; i < books.length; i++) {
+            if ((books[i].getTitle().equals(title)) && (books[i].getAuthor().equals(author))) {
+                return books[i];
+            }
+        }
+        return null;
+    }
+
     //    print books by author
     public void printAuthor() {
         for (Book book : books) {
@@ -87,8 +97,8 @@ public class Department {
         }
     }
 
-//    print books by title
-    public void printTitle(){
+    //    print books by title
+    public void printTitle() {
         for (Book book : books) {
             System.out.println(book.getTitle());
         }

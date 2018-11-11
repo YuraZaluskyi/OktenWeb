@@ -7,6 +7,8 @@ public class Library {
     private Department[] departments = new Department[0];
     private int countDepart = 0;
     private static int id = 0;
+    private Basket basket = new Basket();
+
 
     public Library() {
     }
@@ -32,6 +34,14 @@ public class Library {
         Library.id = id;
     }
 
+    public Basket getBasket() {
+        return basket;
+    }
+
+    public void setBasket(Basket basket) {
+        this.basket = basket;
+    }
+
     //    methods______________________________________________________________________________________________
 //  add department to library
 
@@ -50,14 +60,6 @@ public class Library {
         departments = newArr;
     }
 
-//    //  expands array to one element if array is filled
-//    private void expandArr() {
-//        Book[] newArr = new Book[books.length + 1];
-//        System.arraycopy(books, 0, newArr, 0, books.length);
-//        books = newArr;
-//    }
-
-
     //    get department from library by title
     public Department getDepartByTitle(String title) {
         for (int i = 0; i < departments.length; i++) {
@@ -67,7 +69,6 @@ public class Library {
         }
         return null;
     }
-
 
     //    print departments
     public void printDepartments() {
@@ -81,6 +82,34 @@ public class Library {
         for (Department department : departments) {
             department.printAllInfDepart();
         }
+    }
+
+    //    find department by title
+    public Department findDepart(String title) {
+        for (int i = 0; i < departments.length; i++) {
+            if (departments[i].getTitle().equals(title)) {
+                return departments[i];
+            }
+        }
+        return null;
+    }
+
+    //    add book to basket
+    public void addBookToBasket(String titleDepart, String titleBook, String author) {
+        Book borrowedBook = findDepart(titleDepart).findBook(titleBook, author);
+        if (borrowedBook.isStatus()) {
+            getBasket().addBookBasket(borrowedBook);
+            borrowedBook.setStatus(false);
+        } else if (borrowedBook.isStatus() == false) {
+            System.out.println("This book was borrowed");
+        } else if (basket.getBooks().length == 3) {
+            System.out.println("You can not take more than three books!!!");
+        }
+    }
+
+    //    print books from basket
+    public void printBooksBasket() {
+        getBasket().prinBooks();
     }
 
 

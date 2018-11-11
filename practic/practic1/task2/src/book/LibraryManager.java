@@ -29,14 +29,14 @@ public class LibraryManager {
 
 //    methods_________________________________________________________________________________________________
 
-//    add department to library
+    //    add department to library
     public void addDepartToLibrary() {
         System.out.println("Enter title of department");
         String title = sc.next();
         library.addDepartment(title);
     }
 
-//    add book to library
+    //    add book to library
     public void addBookToDepart() {
         System.out.println("Enter title of department");
         String titleDepart = sc.next();
@@ -51,19 +51,19 @@ public class LibraryManager {
                 .addBook(titleBook, nameAuthor, yearPubl);
     }
 
-//    print departments from library
-    public void printDeparts(){
+    //    print departments from library
+    public void printDeparts() {
         library.printDepartments();
 
     }
 
-//    print all information about books from library
-    public void allInfBooksLibrary(){
+    //    print all information about books from library
+    public void allInfBooksLibrary() {
         library.printAllInfLibrary();
     }
 
-//    print books by author
-    public void printAuthors(){
+    //    print books by author
+    public void printAuthors() {
         System.out.println("Enter title of department");
         String departTitle = sc.next();
         library
@@ -72,8 +72,8 @@ public class LibraryManager {
     }
 
 
-//    print books by year published
-    public void printYearPubl(){
+    //    print books by year published
+    public void printYearPubl() {
         System.out.println("Enter title of department");
         String departTitle = sc.next();
         library
@@ -81,13 +81,29 @@ public class LibraryManager {
                 .printYearPubl();
     }
 
-//    print books by title
-    public void printTitle(){
+    //    print books by title
+    public void printTitle() {
         System.out.println("Enter title of department");
         String departTitle = sc.next();
         library
                 .getDepartByTitle(departTitle)
                 .printTitle();
+    }
+
+    //    add book to basket
+    public void addBookToBasket() {
+        System.out.println("Enter title of department");
+        String departTitle = sc.next();
+        System.out.println("Enter title of book");
+        String titleBook = sc.next();
+        System.out.println("Enter name of author");
+        String nameAuthor = sc.next();
+        library.addBookToBasket(departTitle, titleBook, nameAuthor);
+    }
+
+    //    print books from baskets
+    public void printBooksBasket() {
+        library.printBooksBasket();
     }
 
 

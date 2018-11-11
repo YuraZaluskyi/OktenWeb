@@ -34,76 +34,16 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args){
-
-//        Department department = new Department("science fiction");
-//
-//        Department department1 = new Department("poem");
-//
-//        department.addBook("qqq", "www", 2010);
-//        department.addBook("aaa", "sss", 2011);
-//        department.addBook("zzz", "xxx", 2012);
-//        department.addBook("uuu", "lll", 2013);
-//        department.addBook("qqq", "www", 2014);
-//        department.addBook("aaa", "sss", 2015);
-//        department.addBook("zzz", "xxx", 2016);
-//        department.addBook("uuu", "lll", 2017);
-//        department.addBook("qqq", "www", 2018);
-//        department.addBook("aaa", "sss", 2019);
-//        department.addBook("zzz", "xxx", 2020);
-//        department.addBook("uuu", "lll", 2021);
-//        department.addBook("qqq", "www", 2022);
-//        department.addBook("aaa", "sss", 2023);
-//        department.addBook("zzz", "xxx", 2024);
-//        department.addBook("uuu", "lll", 2025);
-//
-//        department1.addBook("p1", "a1", 2000);
-//        department1.addBook("p2", "a2", 2001);
-//        department1.addBook("p3", "a3", 2002);
-//        department1.addBook("p3", "a3", 2002);
-//        department1.addBook("p3", "a3", 2002);
-//        department1.addBook("p1", "a1", 2000);
-//        department1.addBook("p2", "a2", 2001);
-//        department1.addBook("p3", "a3", 2002);
-//        department1.addBook("p3", "a3", 2002);
-//        department1.addBook("p3", "a3", 2002);
-//
-//
-//        System.out.println(department);
-//        System.out.println(department.getCountBooks());
-//        System.out.println(department.getBooks().length);
-//        System.out.println("-------------------------------------------------------------------------");
-//        System.out.println(department1);
-//        System.out.println(department1.getCountBooks());
-//        System.out.println(department1.getBooks().length);
-
-
-//
-        System.out.println("Hello!");
+    public static void main(String[] args) {
 
         LibraryManager libraryManager = new LibraryManager();
         Scanner sc = new Scanner(System.in);
 
-//        libraryManager.addDepartToLibrary();
-//        libraryManager.addDepatToLibrary();
-//        libraryManager.addDepatToLibrary();
-
-//        System.out.println(Library.getId());
-//        System.out.println("--------------------------------------------------------------");
-//        libraryManager.addBookToDepart();
-//        System.out.println(libraryManager.library);
-//        System.out.println("--------------------------------------------------------------");
-//        System.out.println(Library.getId());
-//        libraryManager.addBookToDepart();
-//        System.out.println(libraryManager.library);
-//        libraryManager.addBookToDepart();
-//        libraryManager.addBookToDepart();
-//        System.out.println(libraryManager.library);
-
-        while (true){
+        System.out.println("Hello!");
+        while (true) {
             menu();
             String chosen = sc.next();
-            switch (chosen){
+            switch (chosen) {
                 case "1":
                     libraryManager.printDeparts();
                     break;
@@ -125,6 +65,12 @@ public class Main {
                 case "7":
                     libraryManager.printTitle();
                     break;
+                case "8":
+                    libraryManager.addBookToBasket();
+                    break;
+                case "9":
+                    libraryManager.printBooksBasket();
+                    break;
                 default:
                     return;
             }
@@ -133,7 +79,7 @@ public class Main {
 
     }
 
-    public static void menu(){
+    public static void menu() {
         System.out.println("*****************************************************************");
         System.out.println("          1 - print departments of library");
         System.out.println("          2 - print all books from library");
@@ -142,7 +88,8 @@ public class Main {
         System.out.println("          5 - print books by author");
         System.out.println("          6 - print books by year published");
         System.out.println("          7 - print books by title");
-        System.out.println("          8 - EXIT");
+        System.out.println("          8 - add book to basket");
+        System.out.println("          9 - print books from basket");
         System.out.println("*****************************************************************");
 
     }

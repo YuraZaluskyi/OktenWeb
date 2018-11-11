@@ -5,10 +5,12 @@ public class Book {
     private String title;
     private String author;
     private int yearPubl;
+    private boolean status = true;
 
-    public Book(){}
+    public Book() {
+    }
 
-    public Book(int id, String title, String author, int yearPubl){
+    public Book(int id, String title, String author, int yearPubl) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -16,39 +18,45 @@ public class Book {
     }
 
 
-
-    public int getId(){
+    public int getId() {
         return id;
     }
 
-    public void setId(int id){
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getTitle(){
+    public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title){
+    public void setTitle(String title) {
         this.title = title;
     }
 
-    public String getAuthor(){
+    public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author){
+    public void setAuthor(String author) {
         this.author = author;
     }
 
-    public int getYearPubl(){
+    public int getYearPubl() {
         return yearPubl;
     }
 
-    public void setYearPubl(int yearPubl){
+    public void setYearPubl(int yearPubl) {
         this.yearPubl = yearPubl;
     }
 
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
 
     @Override
     public boolean equals(Object o) {
