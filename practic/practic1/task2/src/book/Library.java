@@ -94,18 +94,6 @@ public class Library {
         return null;
     }
 
-    //    add book to basket
-//    public void addBookToBasket(String titleDepart, String titleBook, String author) {
-//        Book borrowedBook = findDepart(titleDepart).findBook(titleBook, author);
-//        if (borrowedBook.isStatus()) {
-//            getBasket().addBookBasket(borrowedBook);
-//            borrowedBook.setStatus(false);
-//        } else if (borrowedBook.isStatus() == false) {
-//            System.out.println("This book was borrowed");
-//        } else if (basket.getBooks().length == 3) {
-//            System.out.println("You can not take more than three books!!!");
-//        }
-//    }
 
     public void addBookToBasket(String titleDepart, String titleBook, String author) {
         Book borrowedBook = findDepart(titleDepart).findBook(titleBook, author);

@@ -90,6 +90,7 @@ public class Main {
         System.out.println("          7 - print books by title");
         System.out.println("          8 - add book to basket");
         System.out.println("          9 - print books from basket");
+        System.out.println("          EXIT - pres any key! ;-)");
         System.out.println("*****************************************************************");
 
     }
